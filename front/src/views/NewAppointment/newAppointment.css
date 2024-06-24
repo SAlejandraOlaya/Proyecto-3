@@ -1,0 +1,11 @@
+
+.date-picker-container {
+    position: relative;
+}
+
+.react-datepicker {
+    position: absolute;
+    top: calc(100% + 5px); /* Posiciona el calendario 5px debajo del contenedor */
+    left: 0;
+    z-index: 9999; /* Asegúrate de que el calendario esté por encima de otros elementos */
+}

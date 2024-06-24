@@ -1,0 +1,11 @@
+.logoImg{
+    width: 40px;
+    height:40px;
+}
+
+.citas{
+    text-align: center;
+    font-style: italic;
+    font-size: large;
+    margin-top: 10 px;
+}
