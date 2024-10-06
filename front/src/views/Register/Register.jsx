@@ -3,7 +3,7 @@ import { Button, Container, Form, Row } from 'react-bootstrap';
 import validate from "../../assets/validate";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { API_URL } from '../../.env';
+
 
 const Register = () => {
   const initialData = {
@@ -19,10 +19,11 @@ const Register = () => {
   const [userData, setuserData] = useState(initialData)
   const [errors, setErrors] = useState(initialData)
   const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const postData = async () => {
     try {
-      const response = await axios.post(`${API_URL}/users/register `, userData)
+      const response = await axios.post(`${apiUrl}/users/register `, userData)
       console.log(response)
       alert('Registro finalizado con éxito')
 

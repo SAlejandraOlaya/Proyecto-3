@@ -8,7 +8,7 @@ import './newAppointment.css'
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { API_URL } from '../../.env';
+
 
 export const NewAppointment = () => {
     const user = useSelector((state) => state.user);
@@ -22,11 +22,12 @@ export const NewAppointment = () => {
     const [appointment, setAppointment] = useState(initialData)
     const [errors, setErrors] = useState(initialData)
     const navigate = useNavigate();
+    const apiUrl = import.meta.env.VITE_API_URL;
 
     const postAppointment = async () => {
         const payload = { ...appointment, userId: user.id }
         try {
-            const response = await axios.post(`${API_URL}/appointments/schedule`, payload)
+            const response = await axios.post(`${apiUrl}/appointments/schedule`, payload)
             console.log(response)
             alert('Turno agendado con éxito')
 

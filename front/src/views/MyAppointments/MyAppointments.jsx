@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setUserAppointments } from "../../redux/reducer"
-import { API_URL } from '../../.env';
+
 
 const MyAppointments = () => {
 
@@ -12,11 +12,12 @@ const MyAppointments = () => {
   const user = useSelector((state) => state.user);
   const appointments = useSelector((state) => state.userAppointments);
   const dispatch = useDispatch();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetcData = async () => {
       try {
-        const response = await axios.get(`${API_URL}/users/${user.id}`);
+        const response = await axios.get(`${apiUrl}/users/${user.id}`);
         dispatch(setUserAppointments(response.data.appointments))
         console.log(response.data.appointments);
       } catch (error) {
