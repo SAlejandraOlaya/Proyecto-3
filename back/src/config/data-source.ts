@@ -1,6 +1,6 @@
 import { DataSource } from "typeorm";
 import { User } from "../entities/userEntity";
-import { DB_HOST, DB_PASSWORD, DB_PORT, DB_USERNAME } from "./envs";
+import { DB_HOST, DB_PASSWORD, DB_PORT, DB_USERNAME, DB_NAME } from "./envs";
 import { Appointment } from "../entities/appointmentsEntity";
 import { Credential } from "../entities/credentialEntity";
 
@@ -10,8 +10,8 @@ export const AppDataSource = new DataSource({
     port: Number(DB_PORT),
     username: DB_USERNAME,
     password: DB_PASSWORD,
-    database: "medical_appointments",
-    // dropSchema: true,// limpia la base de datos 
+    database: DB_NAME,
+    // dropSchema: true,// limpia la base de datos  
     synchronize: true,
     logging: false,
     entities: [User, Appointment, Credential],
