@@ -1,6 +1,6 @@
 import { DataSource } from "typeorm";
 import { User } from "../entities/userEntity";
-import { DB_HOST, DB_PASSWORD, DB_PORT, DB_USERNAME, DB_NAME } from "./envs";
+import { DB_HOST, DB_PASSWORD, DB_PORT, DB_USER, DB_NAME } from "./envs";
 import { Appointment } from "../entities/appointmentsEntity";
 import { Credential } from "../entities/credentialEntity";
 
@@ -8,7 +8,7 @@ export const AppDataSource = new DataSource({
     type: "postgres",
     host: DB_HOST,
     port: Number(DB_PORT),
-    username: DB_USERNAME,
+    username: DB_USER,
     password: DB_PASSWORD,
     database: DB_NAME,
     // dropSchema: true,// limpia la base de datos  
