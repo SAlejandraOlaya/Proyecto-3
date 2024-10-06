@@ -8,6 +8,7 @@ import './newAppointment.css'
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from '../../.env';
 
 export const NewAppointment = () => {
     const user = useSelector((state) => state.user);
@@ -25,7 +26,7 @@ export const NewAppointment = () => {
     const postAppointment = async () => {
         const payload = { ...appointment, userId: user.id }
         try {
-            const response = await axios.post('http://localhost:3000/appointments/schedule', payload)
+            const response = await axios.post(`${API_URL}/appointments/schedule`, payload)
             console.log(response)
             alert('Turno agendado con éxito')
 
@@ -132,7 +133,7 @@ export const NewAppointment = () => {
                             {errors.description && <span>{errors.description}</span>}
                         </Form.Group>
 
-                        <div style={{ marginTop: '3rem', marginBottom: '3rem'}}>
+                        <div style={{ marginTop: '3rem', marginBottom: '3rem' }}>
                             <Button variant="primary" type="submit" disabled={errors.date || errors.time || errors.userId || errors.description}>
                                 Agendar cita
                             </Button>

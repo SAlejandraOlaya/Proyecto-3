@@ -5,6 +5,7 @@ import axios from "axios";
 import { setUser } from "../../redux/reducer.js";
 import { useDispatch } from "react-redux";
 import { useNavigate, Link } from 'react-router-dom';
+import { API_URL } from '../../.env';
 
 const Login = () => {
   const loginData = {
@@ -18,7 +19,7 @@ const Login = () => {
 
   const postLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/users/login', login)
+      const response = await axios.post(`${API_URL}/users/login`, login)
       console.log(response)
       alert('Inicio de sesión exitoso')
       dispatch(setUser(response.data.user))

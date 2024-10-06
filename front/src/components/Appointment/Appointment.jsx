@@ -3,6 +3,7 @@ import { Col, Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { cancelAppointment } from "../../redux/reducer"
 import axios from 'axios';
+import { API_URL } from '../../.env';
 
 const Appointment = ({ id, date, time, status, description }) => {
   const statusClass = status === 'active' ? 'status-active' : 'status-canceled';
@@ -11,7 +12,7 @@ const Appointment = ({ id, date, time, status, description }) => {
 
   const putAppointment = async () => {
     try {
-      const response = await axios.put(`http://localhost:3000/appointments/cancel/${id}`);
+      const response = await axios.put(`${API_URL}/appointments/cancel/${id}`);
       console.log(response)
       dispatch(cancelAppointment(id))
     } catch (error) {

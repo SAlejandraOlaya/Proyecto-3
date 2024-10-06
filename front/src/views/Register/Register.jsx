@@ -3,6 +3,7 @@ import { Button, Container, Form, Row } from 'react-bootstrap';
 import validate from "../../assets/validate";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from '../../.env';
 
 const Register = () => {
   const initialData = {
@@ -21,7 +22,7 @@ const Register = () => {
 
   const postData = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/users/register ', userData)
+      const response = await axios.post(`${API_URL}/users/register `, userData)
       console.log(response)
       alert('Registro finalizado con éxito')
 
