@@ -12,9 +12,9 @@ function App() {
   return (
     <div>
       <Header />
-      {<Home />}
+
       <Routes>
-        <Route path="/Inicio" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/About Us" element={<AboutUs />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Login" element={<Login />} />

@@ -24,7 +24,7 @@ const Login = () => {
       console.log(response)
       alert('Inicio de sesión exitoso')
       dispatch(setUser(response.data.user))
-      navigate("/Inicio")
+      navigate("/")
 
     } catch (error) {
       console.log(error, "fallo al ingreso")
