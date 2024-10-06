@@ -5,20 +5,21 @@ import Myfooter from './components/Footer/Myfooter.jsx';
 import Register from './views/Register/Register.jsx'
 import Login from './views/Login/Login.jsx'
 import NewAppointment from './views/NewAppointment/NewAppointment.jsx';
-import{Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import AboutUs from './views/AboutUs/AboutUs.jsx';
 function App() {
 
   return (
     <div>
       <Header />
+      {<Home />}
       <Routes>
-      <Route path="/Inicio" element= {<Home/>} />
-      <Route path="/About Us" element= {<AboutUs/>} />
-      <Route path="/Register" element= {<Register/>} />
-      <Route path="/Login" element= {<Login/>} />
-      <Route path="/Mis turnos" element= {<MyAppointments/>} />
-      <Route path="/Agendar cita" element= {<NewAppointment/>} />
+        <Route path="/Inicio" element={<Home />} />
+        <Route path="/About Us" element={<AboutUs />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Mis turnos" element={<MyAppointments />} />
+        <Route path="/Agendar cita" element={<NewAppointment />} />
       </Routes>
       <Myfooter />
 
