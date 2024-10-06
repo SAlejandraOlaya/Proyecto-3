@@ -46,7 +46,7 @@ export const validate = (input) => {
     if (!passwordRegex.test(input.password)) {
         errors = {
             ...errors,
-            password: 'debe contener al menos 6 caracteres, entre ellos letras y números'
+            password: 'la contraseña debe contener al menos 6 caracteres, entre ellos letras y números'
         }
     }
     if (input.password !== input.confirmPassword) {
